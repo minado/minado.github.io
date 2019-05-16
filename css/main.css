@@ -1734,6 +1734,12 @@ pre .javascript .function {
   border-rodius: 50%;
   tronsition: 2s all;
 }
+.site-author-image {
+  border-radius: 100%;
+}
+.site-author-image {
+  transition: transform 1s ease-out;
+}
 .site-author-name {
   margin: 0;
   text-align: center;
@@ -1767,7 +1773,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #169171;
+  background: #410af2;
 }
 .feed-link,
 .chat {

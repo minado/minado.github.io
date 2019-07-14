@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="CSS3学习总结 CSS的学习 day01 CSS概述 CSS作用:层叠样式表（Cascading Style Sheets）,美化页面,布局页面,修饰元素的外观,修改元素的位置. CSS基本机构:行内样式,内嵌样式,外联样式(link href=”” rel=”stylesheet” type=”text/css”) CSS基本语法:选择器{ 属性:属性值;} CSS特性: 样式的优先级特性:行">
+<meta name="keywords" content="前端技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3学习总结">
+<meta property="og:url" content="https://minado.github.io/category/css3学习总结/index.html">
+<meta property="og:site_name" content="minado&#39;s blog">
+<meta property="og:description" content="CSS3学习总结 CSS的学习 day01 CSS概述 CSS作用:层叠样式表（Cascading Style Sheets）,美化页面,布局页面,修饰元素的外观,修改元素的位置. CSS基本机构:行内样式,内嵌样式,外联样式(link href=”” rel=”stylesheet” type=”text/css”) CSS基本语法:选择器{ 属性:属性值;} CSS特性: 样式的优先级特性:行">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-14T05:20:08.885Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3学习总结">
+<meta name="twitter:description" content="CSS3学习总结 CSS的学习 day01 CSS概述 CSS作用:层叠样式表（Cascading Style Sheets）,美化页面,布局页面,修饰元素的外观,修改元素的位置. CSS基本机构:行内样式,内嵌样式,外联样式(link href=”” rel=”stylesheet” type=”text/css”) CSS基本语法:选择器{ 属性:属性值;} CSS特性: 样式的优先级特性:行">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://minado.github.io/category/css3学习总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>css3学习总结 | minado's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">minado's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">fallin snow</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://minado.github.io/category/css3学习总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="minado">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="minado's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css3学习总结
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-14 13:12:17 / 修改时间：13:20:08" itemprop="dateCreated datePublished" datetime="2019-07-14T13:12:17+08:00">2019-07-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CSS3学习总结</p>
+<p>CSS的学习</p>
+<p>day01</p>
+<p>CSS概述</p>
+<p>CSS作用:层叠样式表（Cascading Style Sheets）,美化页面,布局页面,修饰元素的外观,修改元素的位置.</p>
+<p>CSS基本机构:行内样式,内嵌样式,外联样式(link href=”” rel=”stylesheet” type=”text/css”)</p>
+<p>CSS基本语法:选择器{ 属性:属性值;}</p>
+<p>CSS特性:</p>
+<p>样式的优先级特性:行内样式,内嵌样式,外联样式,哪个离得被修饰元素近,哪个修饰就先起到作用 (就近原则)</p>
+<p>继承特性:当元素属于父-子关系时,给父类定义一个样式,子类也会继承该样式.</p>
+<p>冲突特性:行内样式会和隐含样式冲突,列入b元素加粗,font-weight:normal字体不加粗.会执行后者.</p>
+<p>查看选择器以调试bug:f12.</p>
+<p>选择器</p>
+<p>选择器就是找到文档中某个元素或者某一批元素,用来设置样式.</p>
+<p>基本选择器</p>
+<p>通用选择器: *{} 设置所有元素样式</p>
+<p>类型选择器: 标签名开头{} 例如:div{}</p>
+<p>类选择器:标签中定义class之后,以.class{}开头</p>
+<p>缩小范围的类选择器:想为多个相同的类中的某一个设置特定的样式可以使用(标签名.classname{}的形式来设置). 例如:div.div1{}</p>
+<p>为元素起小名:同样的,想为多个相同的类中的某一个特定的类设置样式可以使用多个小名的形式(class=”div1 classname”)–&gt;(.div1.classname1{})</p>
+<p>id选择器:为元素设置id,然后(#id{}设置样式)</p>
+<p>属性选择器:将元素的某一个属性设置为选择器进行比设置样式</p>
+<p>属性中的某元素为选择器:[target]{}</p>
+<p>属性中某元素的属性值(字符串):[target=”_blank”{}]</p>
+<p>属性中某元素属性值字符串开头:[target^=”_b”]</p>
+<p>复合选择器</p>
+<p>并集选择器:多个类型选择器,中间用逗号隔开 div,span,p{} 为了让多个选择器设置同一个样式</p>
+<p>后代选择器: ul li{} ul中的所有li都会设置样式,包含li中的子元素ul中的li.也就是ul1的孙元素.^_^</p>
+<p>直接后代选择器:ul&gt;li{} 只管父类后边的子类li,不管子类后边的子类ul中的li.</p>
+<p>伪选择器</p>
+<p>伪元素选择器:配合选择器使用</p>
+<p>::first-line选择器</p>
+<p>::first-letter选择器</p>
+<p>:before{ content: “”}(前边加文字)</p>
+<p>:after{content:””}</p>
+<p>伪类选择器:根据元素位置选择元素 比如ul中的li的位置</p>
+<p>nth-child选择器:根据索引元素位置判断,从1开始</p>
+<p>子元素选择器:</p>
+<p>:nth-child(n):选择元素的第n个元素作为选择器.</p>
+<p>n=odd 奇数; n=even 偶数</p>
+<p>:nth-last-child(n):倒数索引</p>
+<p>first-child: ul li:first-child{}</p>
+<p>last-child: ul li:last-child{}</p>
+<p>动态伪类选择器(这个有意思)</p>
+<p>(:link):指定链接未被点击时的样式</p>
+<p>:vistited:链接被访问之后的效果.一般由于浏览器缓存会显示错误</p>
+<p>:hover:鼠标悬停时候的样式</p>
+<p>:active:用户点击时候的样式</p>
+<p>:focus:获得聚焦时候的样式</p>
+<p>补充:</p>
+<p>CSS对大小写不严格要求,但是还是要书写规范.</p>
+<p>权值大小比较:</p>
+<p>内联样式表的权值为 1000</p>
+<p>ID 选择器的权值为 1000</p>
+<p>Class 类选择器的权值为 10</p>
+<p>HTML 标签选择器的权值为 1</p>
+<p>优先级：important&gt;内联样式&gt;id&gt;class&gt;标签|伪类|属性选择器&gt;伪元素&gt;通配符（*）&gt;继承</p>
+<p>day02</p>
+<p>颜色和单位的使用</p>
+<p>颜色</p>
+<p>用颜色的名字表示颜色,比如:red</p>
+<p>用16进制表示演示 比如:#FF0000</p>
+<p>用rgb数值表示颜色,rgb(红,绿,蓝),每个值都在0-255之间</p>
+<p>一般都用16进制表示颜色</p>
+<p>单位</p>
+<p>px:像素,与分辨率设置相关.</p>
+<p>%相对于浏览器的百分之多少,可以对宽度width做设置,不可以对height做设置</p>
+<p>文本样式(text)</p>
+<p>color:设置文本颜色</p>
+<p>text-align:设置文本对齐方式</p>
+<p>center</p>
+<p>left</p>
+<p>right</p>
+<p>letter-spacing:字间距/字母间距</p>
+<p>word-spacing:单词间距,有空格就设置,中文看空格.</p>
+<p>line-height:行高(第二行的行高=第一行底部到第三行顶部)</p>
+<p>text-indent:一般30px就2个</p>
+<p>text-decoration:文本装饰</p>
+<p>underline:下划线</p>
+<p>overline:上划线</p>
+<p>line-through:删除线</p>
+<p>blink 闪烁(不会用)</p>
+<p>text-transform:大小写转换</p>
+<p>uppercase:全部大写</p>
+<p>lowercase:全部小写</p>
+<p>capitalize:每个单词以大写开头</p>
+<p>text-shadow:创建文本阴影(水平偏移量px,垂直偏移量px,模糊程度px,阴影颜色),模糊程度px值高越模糊.</p>
+<p>设置字体:</p>
+<p>font-style:字体样式italic,oblique斜体</p>
+<p>font-size:设置字体的大小</p>
+<p>font-weight:设置字体的粗细,bolder最粗</p>
+<p>font-family:设置文字字体,楷体,隶书等等</p>
+<p>font简写属性: style weight size family(空格)顺序必须按这个格式,一般用了简写属性之后把行间距letter-spacing放font属性后边,不然会覆盖.</p>
+<p>边框和背景</p>
+<p>为元素应用边框</p>
+<p>border-width:边框宽度</p>
+<p>border-style:边框样式</p>
+<p>none没有边框</p>
+<p>dashed虚线</p>
+<p>solied实线</p>
+<p>double双线</p>
+<p>groove槽线</p>
+<p>dotted圆点线边框</p>
+<p>inset内嵌 outset外凸</p>
+<p>ridge 脊线边框</p>
+<p>bolder-color:边框颜色</p>
+<p>简写形式border:width style color 没有先后顺序</p>
+<p>单独设置某一条边框</p>
+<p>border-top/bottom/left/right-width/style/color</p>
+<p>简写形式:border-top{width,style,color}</p>
+<p>应用圆角边框(x半径,y半径,xy相同时写一个就好了)</p>
+<p>border-top/bottom-left/right-radius</p>
+<p>简写:border-radius</p>
+<p>设置元素背景</p>
+<p>background-color:背景颜色</p>
+<p>background-image:{url(“”)} 背景图片地址</p>
+<p>background-repeat:背景图重复方式,一般no-repeat</p>
+<p>background-size:背景图尺寸</p>
+<p>background-position:背景图位置</p>
+<p>简写:background:color image repeat position,尺寸不写,会冲突</p>
+<p>创建盒子阴影</p>
+<p>box-shadow:水平偏移量 垂直偏移量 模糊值 阴影的延伸半径 阴影颜色 10px 10px 5px 0px red;</p>
+<p>添加多个阴影,直接第一个之后用逗号继续写第二个,第一个设置成整数,第二个阴影设置成负数</p>
+<p>设置轮廓</p>
+<p>边框和轮廓的区别：轮廓不属于页面，不会因为应用轮廓而调整页面的布局</p>
+<p>边框占有实际大小,轮廓不占有</p>
+<p>当设置hover悬停时,轮廓修饰的div不会发生位移,边框修饰时位移</p>
+<p>outline-color:轮廓颜色</p>
+<p>outline-style:轮廓样式</p>
+<p>outline-width:轮廓宽度</p>
+<p>outline-offset:轮廓距元素边框偏移量</p>
+<p>简写: outline</p>
+<p>其他样式(表格,列表,透明度,光标)</p>
+<p>表格</p>
+<p>border-collapse相邻单元格边框处理,合并表格=collapse</p>
+<p>border-spacing:相邻单元格间距</p>
+<p>caption-side:标题位置</p>
+<p>empty-cells:空单元格是否显示</p>
+<p>列表</p>
+<p>list-style-tyle:列表前边的标记样式 圆点,方点等等</p>
+<p>list-style-image:列表图像标记</p>
+<p>简写:list-style:none 取消列表的所有属性 一般用于导航</p>
+<p>横向导航: li{display:inline}</p>
+<p>透明度</p>
+<p>opacity:设置透明度(0-1之间取值)</p>
+<p>光标形状</p>
+<p>cursor:设置光标形状,当光标放在某个div上边,设置等待状,手形状等等.</p>
+<p>day03</p>
+<p>盒子模型</p>
+<p>盒子模型分为元素,内边距,边框,外边距,</p>
+<p>1.设置一定尺寸的元素</p>
+<p>1). width:设置元素宽度2). height:设置元素高度</p>
+<p>2.设置内边距</p>
+<p>padding-top/bottom/right/left</p>
+<p>padding:简写形式</p>
+<p>3.设置外边距(边框到浏览器边缘或者到下一个盒子的距离)</p>
+<p>margin-top/bottom/left/right</p>
+<p>margin:简写形式</p>
+<p>4.设置最小和最大尺寸(宽度设置为百分比时,扩大或缩小浏览器或者换了大屏或小屏显示器之后,防止元素错位或溢出)</p>
+<p>min-width:最小值为两div宽度相加值</p>
+<p>max-width:最大值</p>
+<p>5.处理元素内容溢出</p>
+<p>overflow-x/y:x或y轴溢出</p>
+<p>overflow:简写形式: scroll设置滚动条(溢出处理方式)</p>
+<p>6.改变元素类型</p>
+<p>1).元素类型分为:</p>
+<p>inline行内元素:在页面中不可设置宽高,也不会独占一行,b,span</p>
+<p>inline-block行内块级元素:不能独占一行,但能设置宽高.img元素</p>
+<p>block块级元素:独占一行,可以设置宽高,p,div元素</p>
+<p>2).改变元素类型display:</p>
+<p>元素类型可以相互转换,转化之后元素性质也随之改变</p>
+<p>div一般不转化为行内元素,会丢掉,不能设置高</p>
+<p>3).隐藏元素: display:none</p>
+<p>7.浮动和阻止元素堆叠</p>
+<p>浮动:float:left/right</p>
+<p>消除元素堆叠在一起: clear:both(左右都消除)</p>
+<p>8.案例:</p>
+<p>百度页面的搭建:</p>
+<p>技巧:为了让div居中,直接margin:0 auto;</p>
+<p>为了初始不执行浏览器默认特征: *{margin:0px; padding:0px}</p>
+<p>为了防止div块溢出,设置最大最小值. 最小值就是左右两边div相加</p>
+<p>文字垂直居中:line-height</p>
+<p>做导航,链接a标签加到li标签外边</p>
+<p>布局样式</p>
+<ol>
+<li>定位方式position</li>
+</ol>
+<p>static：默认,元素为普通元素,文档流定位,从上到下</p>
+<p>relative(相对的):元素的位置是相对于普通的位置定位的 ,位移之前的位置 其他元素用不了,一般不做太大的改动 ,对某个元素位置进行微调 ,只能使用top,left 我感觉他是相对于他之前的位置移动的</p>
+<p>fixed(固定的)：相对于浏览器窗口来定位 ,常用!!! ,位移之前位置不会被占用, 上下左右都可以使用, 小广告常用手法, 滚动条不断移,他的位置也不变 ,他会脱离文档流,漂浮于文档流上边,他这个上下左右是相对于边的位置,比如:top50px 不是向上移动50px ,而是元素相对于顶部边框距离50px 设置buttom也同样可以使用,而且拉动滚动条也不会变化位置</p>
+<p>absolute(绝对的)：元素相对position值不为static的一个祖先元素定 子元素依据祖先元素变化 祖先元素不能为static 依据谁变化,谁不可以为static(默认为static),发生在父子 或 祖先元素与后代元素之间的位移定位</p>
+<ol start="2">
+<li>定位布局</li>
+</ol>
+<p>top/bottom/left/right</p>
+<ol start="3">
+<li>z-index</li>
+</ol>
+<p>用来设置元素 和 元素 的显示层数,正数 负数 都可以</p>
+<p>必须配合position使用</p>
+<p>过渡,变形</p>
+<ol>
+<li>过渡</li>
+</ol>
+<p>过渡:元素由一种样式逐渐变为另一种样式</p>
+<p>属性:</p>
+<p>transition-delay:设置过渡前的延时</p>
+<p>transition-duration:设置过渡用时</p>
+<p>transition-property:设置过渡参与的属性</p>
+<p>transition-timing-function:过渡速率(linear匀速)</p>
+<p>transition:简写形式(property duration timing-function delay)</p>
+<p>反向过渡:</p>
+<p>hover中设置的,粘贴到div中,就可以了</p>
+<ol start="2">
+<li>变形</li>
+</ol>
+<p>transform: 指定如何变形</p>
+<p>transform: scaleX/Y(1.5) 缩放1.5倍</p>
+<p>transform: rotate(360deg) 旋转360度 deg代表度数,配合过渡时间 效果很好</p>
+<p>transform: skew(X轴角度,Y轴角度) 倾斜的角度</p>
+<p>transform: translate(X轴距离,Y轴距离) 移动的距离</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端技术/" rel="tag"># 前端技术</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/category/在Hexo博客上添加可爱的Live 2D模型/" rel="next" title="在Hexo博客上添加可爱的Live 2D模型">
+                <i class="fa fa-chevron-left"></i> 在Hexo博客上添加可爱的Live 2D模型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="minado">
+            
+              <p class="site-author-name" itemprop="name">minado</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/minado" title="GitHub &rarr; https://github.com/minado" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/qige849213206@qq.com" title="E-Mail &rarr; qige849213206@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://space.bilibili.com/125214" title="http://space.bilibili.com/125214" rel="noopener" target="_blank">bilibili</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">minado</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
